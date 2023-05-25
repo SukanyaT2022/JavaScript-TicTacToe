@@ -1,23 +1,27 @@
+var win = 0
 var turn = 0;
 function gamePlay(id){
+    //td represent by td each box
     var td = document.getElementById(id)
-    if (turn==0&& td.hasChildNodes()==false){
+    //hasChildnode is function to check true or false
+    if (turn==0 && win==0 && td.hasChildNodes()==false){
         var img = document.createElement('img')
         img.setAttribute('src','henry.jpg')//
         img.setAttribute('height','120px')
         img.setAttribute('width','120px')
-        td.appendChild(img)
+        td.appendChild(img)// we put image inside td tag
+        // appendchild will add pic inside td tag
      if (winner(img)==true){
 alert('Henry wins !')
+win = 1
      }
-        
-        if (draw()==true){
-            alert ("The game is a draw")
+        if (win==0 && draw()==true){
+            alert ("No one wins the game.")
         }
         turn = 1
 
     }
-    else if(turn == 1&& td.hasChildNodes()==false){
+    else if(turn == 1&& win==0 && td.hasChildNodes()==false){
         var img = document.createElement('img')
         img.setAttribute('src','logan.jpg')
         img.setAttribute('height','120px')
@@ -26,32 +30,52 @@ alert('Henry wins !')
 
         if (winner(img)==true){
             alert('Logan wins !')
+            win = 1
                  }
-
-        if (draw()==true){
-            alert ("The game is a draw")
+//no one win and no box to fill--if draw return it mean no one win
+        if (win==0 && draw()==true){
+            alert ("No one wins the game.")
         }
 
         turn = 0
 
     }
+    // if (td.firstChild==null && win==0) 
+    // td.appendChild(img)
+    
+    // if (winner(img)==true){
+    //     alert('Henry wins !')
+    //          }
+                
+    //             if (draw()==true){
+    //                 alert ("The game is a draw")
+    //             }
+    //             if (turn==0){
+    //                 turn = 1
+    //             }else 
+    //             turn = 0
 }
 
 
 //draw function - we check every cell--noone win
 //first check every cell are blank or nor not or empty
+//function draw if no empty box left to play -= no one win
 function draw(){
     for (i=0; i<=8; i++){
-        var id = ''+ i
+        var id = ''+ i //this line convert id to number
         if(document.getElementById(id).hasChildNodes())
         continue
+        //.hasChildnode is image check image fill the box
          else{
             return false
+            //if false all box not fill yet
         }
     }
    return true
+   //if true means all boxes are filled --not conitnue the game
 
 }
+//conitnue 
 
 //function winner
 
@@ -138,7 +162,12 @@ return true
 
 return false
 
-
-
-
 }
+function startGame(){
+    for (i=0; i<=8; i++){
+        var id = ''+ i
+        if (document.getElementById(id).hasChildNodes())
+        document.getElementById(id).removeChild(document.getElementById(id).firstChild)}
+        turn = 0
+        win = 0
+    }
