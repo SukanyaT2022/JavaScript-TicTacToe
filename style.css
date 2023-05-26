@@ -38,10 +38,10 @@ img{
 
 table{
     border-collapse: collapse;
-    position: absolute;
+    /* position: absolute;
     transform: translate(-50%,-50%);
     left: 50%;
-    top: 45%;
+    top: 45%; */
 
 
 }
@@ -56,6 +56,18 @@ button{
     padding: 15px 25px;
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.mainBox{
+    display: flex;
+    width: 90%;
+}
+
+.player{
+width: 50%;
+}
+
+.gridBox{
+    width: 50%;
 
 }

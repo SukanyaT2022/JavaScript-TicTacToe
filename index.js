@@ -1,12 +1,14 @@
 var win = 0
 var turn = 0;
+var playerOne = '';
+var playerTwo = '';
 function gamePlay(id){
     //td represent by td each box
     var td = document.getElementById(id)
     //hasChildnode is function to check true or false
     if (turn==0 && win==0 && td.hasChildNodes()==false){
         var img = document.createElement('img')
-        img.setAttribute('src','henryPNG.png')//
+        img.setAttribute('src',playerOne)//
         img.setAttribute('height','120px')
         img.setAttribute('width','120px')
         td.appendChild(img)// we put image inside td tag
@@ -23,7 +25,7 @@ win = 1
     }
     else if(turn == 1&& win==0 && td.hasChildNodes()==false){
         var img = document.createElement('img')
-        img.setAttribute('src','loganPNG.png')
+        img.setAttribute('src',playerTwo)
         img.setAttribute('height','120px')
         img.setAttribute('width','120px')
         td.appendChild(img)
@@ -170,4 +172,33 @@ function startGame(){
         document.getElementById(id).removeChild(document.getElementById(id).firstChild)}
         turn = 0
         win = 0
+        //below work on player
+        var optionOne = document.formOne.playerOne.value
+        var optionTwo = document.formOne.playerTwo.value
+        //option one
+        if (optionOne=="Henry"){
+            playerOne = "henryPNG.png"
+        }else if(optionOne == "Logan") {
+            playerOne = "loganPNG.png"
+        }else if(optionOne == "Dinosaur") {
+            playerOne = "https://images.unsplash.com/photo-1583867195148-e869329c07b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlub3NhdXJzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" }
+            else if(optionOne == "Bird") {
+                playerOne = "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJpcmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"  }
+                else{
+                    playerOne = "henryPNG.png" 
+                }
+
+                // option two 
+
+                if (optionTwo=="Henry"){
+                    playerTwo = "henryPNG.png"
+                }else if(optionTwo == "Logan") {
+                    playerTwo = "loganPNG.png"
+                }else if(optionTwo == "Dinosaur") {
+                    playerTwo = "https://images.unsplash.com/photo-1583867195148-e869329c07b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlub3NhdXJzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" }
+                    else if(optionTwo == "Bird") {
+                        playerTwo = "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJpcmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"  }
+                        else{
+                            playerTwo = "loganPNG.png"
+                        }
     }
