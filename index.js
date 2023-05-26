@@ -6,7 +6,7 @@ function gamePlay(id){
     //hasChildnode is function to check true or false
     if (turn==0 && win==0 && td.hasChildNodes()==false){
         var img = document.createElement('img')
-        img.setAttribute('src','henry.jpg')//
+        img.setAttribute('src','henryPNG.png')//
         img.setAttribute('height','120px')
         img.setAttribute('width','120px')
         td.appendChild(img)// we put image inside td tag
@@ -23,7 +23,7 @@ win = 1
     }
     else if(turn == 1&& win==0 && td.hasChildNodes()==false){
         var img = document.createElement('img')
-        img.setAttribute('src','logan.jpg')
+        img.setAttribute('src','loganPNG.png')
         img.setAttribute('height','120px')
         img.setAttribute('width','120px')
         td.appendChild(img)
