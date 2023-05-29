@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>TicTacToe</title>
+    <link rel="icon" href="https://media.istockphoto.com/id/172262225/photo/licorice-tic-tac-toe.webp?b=1&s=170667a&w=0&k=20&c=Mfrr2LthUuwmcT-WfVtsXY5yme-OtROQOw445X-W-ro=">
+
     <script src="index.js"></script>
 </head>
 <body>
@@ -14,9 +16,17 @@
     <!-- step 1. choose player below div -->
     
 <div class="player">
+
+<div class="targetArrow">
+<h2>Choose Players</h2>
+
+</div>
+
+
     <form name="formOne">
     <div class="playerOne">
-<h2>Player One</h2>
+<h3>Player One</h3>
+<i class="fa-solid fa-arrow-right fa-beat"></i>
 <input type="radio" name="playerOne" value="Henry">
 <img src="henryPNG.png" height="100px" width="100px" border-radious="100%">
 
@@ -32,7 +42,8 @@
 
 <div class="playerTwo">
 
-    <h2>Player Two</h2>
+    <h3>Player Two</h3>
+    <i class="fa-solid fa-arrow-right fa-beat"></i>
     <input type="radio" name="playerTwo" value="Henry">
     <img src="henryPNG.png" height="100px" width="100px" border-radious="100%">
     
@@ -47,13 +58,15 @@
 
 </div>
 <!-- we call startgame function -->
-<button onclick="startGame()">Start</button>
+<button onclick="startGame()" class="startButton">Start</button>
 
 </form>
-
-
-
 </div>
+
+<!--end left side box-->
+
+
+
 <div class="gridBox">
 <h2>Let's Play Tic Tac Toe</h2>
     <table>
@@ -82,8 +95,14 @@
             <div class="text"></div>
         </div>
 
-        <button onClick ="startGame()">Replay</button>
+        <button onClick ="startGame()" class="replyButton">Replay</button>
     </div>
     </div>
+
+<!-- font awesome link -->
+<script src="https://kit.fontawesome.com/42d8882816.js" crossorigin="anonymous"></script>
+
+
+
 </body>
 </html>
