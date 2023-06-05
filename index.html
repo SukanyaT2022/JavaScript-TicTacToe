@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>TicTacToe</title>
-    <link rel="icon" href="https://media.istockphoto.com/id/172262225/photo/licorice-tic-tac-toe.webp?b=1&s=170667a&w=0&k=20&c=Mfrr2LthUuwmcT-WfVtsXY5yme-OtROQOw445X-W-ro=">
+    <link rel="icon" href="tLogoBG.png">
 
     <script src="index.js"></script>
 </head>
 <body>
+    <form name="formOne">
 <div class="mainBox">
    
     <!-- step 1. choose player below div -->
@@ -18,12 +19,13 @@
 <div class="player">
 
 <div class="targetArrow">
+    <!-- <i class="fa-solid fa-rainbow fa-beat"></i>
+    <i class="fa-solid fa-star fa-spin"></i> -->
+    <!-- <i class="fa-solid fa-truck-monster fa-shake"></i> -->
 <h2>Choose Players</h2>
 
 </div>
 
-
-    <form name="formOne">
     <div class="playerOne">
 <h3>Player One</h3>
 <i class="fa-solid fa-arrow-right fa-beat"></i>
@@ -58,9 +60,9 @@
 
 </div>
 <!-- we call startgame function -->
-<button onclick="startGame()" class="startButton">Start</button>
+<input type="button" onclick="startGame()" class="startButton" value="Start">
 
-</form>
+
 </div>
 
 <!--end left side box-->
@@ -90,19 +92,24 @@
                 </tr>
         
         </table>
-
+        <input type="hidden" id="txtP1"/>
+        <input type="hidden" id="txtP2"/>
         <div class="endGame">
             <div class="text"></div>
         </div>
 
-        <button onClick ="startGame()" class="replyButton">Replay</button>
+        <input type="button" onclick ="startGame()" class="replyButton" value="Replay">
     </div>
     </div>
 
+
+</form>
 <!-- font awesome link -->
 <script src="https://kit.fontawesome.com/42d8882816.js" crossorigin="anonymous"></script>
 
-
+<video style="visibility: hidden; z-index: 2;" id="fire" height=500 width="400" autoplay>
+    <source  src="fireworks.mp4" type="video/mp4">
+</video> 
 
 </body>
 </html>

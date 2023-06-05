@@ -1,62 +1,8 @@
 var win = 0
 var turn = 0;
-var playerOne = '';
-var playerTwo = '';
-function gamePlay(id){
-    //td represent by td each box
-    var td = document.getElementById(id)
-    //hasChildnode is function to check true or false
-    if (turn==0 && win==0 && td.hasChildNodes()==false){
-        var img = document.createElement('img')
-        img.setAttribute('src',playerOne)//
-        img.setAttribute('height','120px')
-        img.setAttribute('width','120px')
-        td.appendChild(img)// we put image inside td tag
-        // appendchild will add pic inside td tag
-     if (winner(img)==true){
-alert('Henry wins !')
-win = 1
-     }
-        if (win==0 && draw()==true){
-            alert ("No one wins the game.")
-        }
-        turn = 1
+var playerOne = "";
+var playerTwo = "";
 
-    }
-    else if(turn == 1&& win==0 && td.hasChildNodes()==false){
-        var img = document.createElement('img')
-        img.setAttribute('src',playerTwo)
-        img.setAttribute('height','120px')
-        img.setAttribute('width','120px')
-        td.appendChild(img)
-
-        if (winner(img)==true){
-            alert('Logan wins !')
-            win = 1
-                 }
-//no one win and no box to fill--if draw return it mean no one win
-        if (win==0 && draw()==true){
-            alert ("No one wins the game.")
-        }
-
-        turn = 0
-
-    }
-    // if (td.firstChild==null && win==0) 
-    // td.appendChild(img)
-    
-    // if (winner(img)==true){
-    //     alert('Henry wins !')
-    //          }
-                
-    //             if (draw()==true){
-    //                 alert ("The game is a draw")
-    //             }
-    //             if (turn==0){
-    //                 turn = 1
-    //             }else 
-    //             turn = 0
-}
 
 
 //draw function - we check every cell--noone win
@@ -167,38 +113,121 @@ return false
 }
 function startGame(){
     for (i=0; i<=8; i++){
-        var id = ''+ i
+        var id = ''+ i // i represent number id
         if (document.getElementById(id).hasChildNodes())
         document.getElementById(id).removeChild(document.getElementById(id).firstChild)}
+        
         turn = 0
         win = 0
         //below work on player
         var optionOne = document.formOne.playerOne.value
         var optionTwo = document.formOne.playerTwo.value
+        if(optionOne==optionTwo)
+        {
+            alert("Please select different players!!")
+        }
+       else{
         //option one
+        let p1=""
+        let p2=""
         if (optionOne=="Henry"){
-            playerOne = "henryPNG.png"
+            p1 = "henryPNG.png"
         }else if(optionOne == "Logan") {
-            playerOne = "loganPNG.png"
+            p1 = "loganPNG.png"
         }else if(optionOne == "Dinosaur") {
-            playerOne = "https://images.unsplash.com/photo-1583867195148-e869329c07b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlub3NhdXJzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" }
+            p1 = "https://images.unsplash.com/photo-1583867195148-e869329c07b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlub3NhdXJzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" }
             else if(optionOne == "Bird") {
-                playerOne = "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJpcmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"  }
+                p1 = "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJpcmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"  }
                 else{
-                    playerOne = "henryPNG.png" 
+                    p1 = "henryPNG.png" 
                 }
 
                 // option two 
 
                 if (optionTwo=="Henry"){
-                    playerTwo = "henryPNG.png"
+                    p2 = "henryPNG.png"
                 }else if(optionTwo == "Logan") {
-                    playerTwo = "loganPNG.png"
+                    p2 = "loganPNG.png"
                 }else if(optionTwo == "Dinosaur") {
-                    playerTwo = "https://images.unsplash.com/photo-1583867195148-e869329c07b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlub3NhdXJzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" }
+                    p2 = "https://images.unsplash.com/photo-1583867195148-e869329c07b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlub3NhdXJzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" }
                     else if(optionTwo == "Bird") {
-                        playerTwo = "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJpcmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"  }
+                        p2 = "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJpcmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"  }
                         else{
-                            playerTwo = "loganPNG.png"
+                            p2 = "loganPNG.png"
                         }
+
+                      playerOne=p1 
+                      playerTwo=p2
+                       
+
+                 
+                    }            
+                
     }
+
+    function gamePlay(id){
+        if(playerOne=="" || playerTwo=="")
+        {
+            alert("Please Select the players and click on start button!!!")
+        }
+        else{
+        //td represent by td each box
+        var td = document.getElementById(id)
+        //hasChildnode is function to check true or false
+        if (turn==0 && win==0 && td.hasChildNodes()==false){
+            var img = document.createElement('img')
+            img.setAttribute('src',playerOne)//
+            img.setAttribute('height','120px')
+            img.setAttribute('width','120px')
+            img.setAttribute('style','visibility:visible')
+            td.appendChild(img)// we put image inside td tag
+            // appendchild will add pic inside td tag
+         if (winner(img)==true){
+    alert('Player One wins !')
+    win = 1
+    
+         }
+            if (win==0 && draw()==true){
+                alert ("No one wins the game.")
+            }
+            turn = 1
+    
+        }
+        else if(turn == 1&& win==0 && td.hasChildNodes()==false){
+            var img = document.createElement('img')
+            img.setAttribute('src',playerTwo)
+            img.setAttribute('height','120px')
+            img.setAttribute('width','120px')
+            img.setAttribute('style','visibility:visible')
+            td.appendChild(img)
+            
+            if (winner(img)==true){
+                alert('Player Two wins !')
+                win = 1
+            
+                     }
+    //no one win and no box to fill--if draw return it mean no one win
+            if (win==0 && draw()==true){
+                alert ("No one wins the game.")
+            }
+    
+            turn = 0
+    
+        }
+        // if (td.firstChild==null && win==0) 
+        // td.appendChild(img)
+        
+        // if (winner(img)==true){
+        //     alert('Henry wins !')
+        //          }
+                    
+        //             if (draw()==true){
+        //                 alert ("The game is a draw")
+        //             }
+        //             if (turn==0){
+        //                 turn = 1
+        //             }else 
+        //             turn = 0
+    }
+    }
+    
