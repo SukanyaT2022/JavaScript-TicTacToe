@@ -1,3 +1,9 @@
+html,body{
+    overflow-x: hidden;
+}
+
+
+
 h2{
     text-align: center;
     font-size: 35px;
@@ -60,7 +66,6 @@ h2{
  .mainBox{
      display: flex;
      width: 90%;
- 
      margin: auto;
      justify-content: space-between;
  }
@@ -69,7 +74,6 @@ h2{
  
  .gridBox{
      width: 50%;
- 
      position: relative;
      /* parent */
      padding-bottom: 100px;
@@ -110,4 +114,106 @@ h2{
  border-image-slice: 1; 
  
  }
- 
+ .controlHeaderPlayerOne-Outside{
+    display: none;
+ }
+
+     /*ipad*/
+@media screen and (max-width: 992px) {
+
+    .mainBox{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin-top: 50px;
+
+    }
+    .player{
+        width: 100%;
+       
+        }
+  .playerOne{
+text-align: center;
+  }
+
+.playerTwo{
+text-align: center;
+height: 280px;
+}
+
+    .gridBox{
+        width: 100%;
+        position: relative;
+        /* parent */
+        padding-bottom: 100px;
+    }
+    input[type=radio]{
+        width: 25px;
+        height: 25px;
+    }
+
+    
+
+
+  
+  
+  }
+  
+  /*ipad-mini*/
+  @media screen and (max-width: 768px) {
+  }
+  
+  /*phone*/
+  @media screen and (max-width: 600px) {
+    .playerOne img{
+width: 50px;
+height: 50px;
+
+  }
+  .playerTwo img{
+    width: 50px;
+    height: 50px;
+    
+      }
+
+
+  .playerOne {
+   display: flex;
+  flex-wrap: wrap;
+    
+      }
+
+      .playerTwo {
+        display: flex;
+       flex-wrap: wrap;
+       height: 150px;
+     
+         
+           }
+  input[type=radio]{
+    width: 15px;
+    height: 15px;
+}
+.fa-arrow-right{
+    font-size: 50px;
+   margin-right: 10px;
+}
+.controlHeaderPlayerOne-Outside{
+    display: block;
+ }
+ .controlHeaderPlayerOne{
+    display: none;
+ }
+
+ td{
+    border: 2px solid #ffaa47;
+    height: 80px;
+    width: 80px;
+    
+}
+.gridBox span{
+display: block;
+}
+
+
+  }
