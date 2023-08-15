@@ -214,6 +214,10 @@ height: 50px;
 .gridBox span{
 display: block;
 }
+.cell img{
+    width: 70px;
+    height: 70px;
+}
 
 
   }
